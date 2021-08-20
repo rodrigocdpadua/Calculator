@@ -14,6 +14,21 @@ function divide(num1, num2){
   return num1 / num2;
 }
 
-
-
-console.log(sum(1,2));
+function calculation(num1, symb, num2){
+  let result;
+  switch (symb){
+    case '+':
+      result = num1 + num2;
+      break;
+    case '-':
+      result = num1 - num2;
+      break;
+    case '*':
+      result = num1 * num2;
+      break;
+    case '/':
+      result = num1 / num2;
+      break;
+  }
+  return result;
+}
