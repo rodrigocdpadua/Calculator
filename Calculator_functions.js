@@ -23,11 +23,13 @@ function calculation(num1, symb, num2){
 let exp_complete = [,,,false]; // [0]-Num1 , [1]-Op, [2]-Num2, [3]-logic for equal
 
 function showNumber(n){
-  if(document.getElementById("display").value == 0 || document.getElementById("display").value == ""){
-    document.getElementById("display").value = n;
-  }
-  else{
-    document.getElementById("display").value += n;
+  if(document.getElementById("display").value.length < 8){
+    if(document.getElementById("display").value == 0 || document.getElementById("display").value == ""){
+      document.getElementById("display").value = n;
+    }
+    else{
+      document.getElementById("display").value += n;
+    }
   }
 }
 
@@ -44,7 +46,12 @@ function equal(){
   }
 
   result = calculation(parseFloat(exp_complete[0]), exp_complete[1], parseFloat(exp_complete[2]));
-  document.getElementById("display").value = result;
+
+  if(result.length < 8){
+    document.getElementById("display").value = result;
+  } else{
+    document.getElementById("display").value = "ERR";
+  }
 
   exp_complete[0] = result;
 }
