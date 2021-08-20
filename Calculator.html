@@ -4,39 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" type="text/css" href="Calculator.css"/>
   <script type="text/javascript" src="Calculator_functions.js"></script>
+  
   <title>Calculator</title>
-
-  <script>
-    let exp_complete = [,,];
-
-    function showNumber(n){
-      if(document.getElementById("display").value == 0 || document.getElementById("display").value == ""){
-        document.getElementById("display").value = n;
-      }
-      else{
-        document.getElementById("display").value += n;
-      }
-    }
-
-    function cleanDisplay(){
-      document.getElementById("display").value = 0;
-    }
-
-    function operationOrEqual(symb){
-      let result;
-      if(symb == '='){
-        exp_complete[2] = document.getElementById("display").value;
-        result = calculation(parseInt(exp_complete[0]), exp_complete[1], parseInt(exp_complete[2]));
-        document.getElementById("display").value = result;
-      } else{
-        exp_complete[0] = document.getElementById("display").value;
-        exp_complete[1] = symb;
-        document.getElementById("display").value = "";
-      }
-    }
-  </script>
 </head>
 <body>
   <div class="calculator">
@@ -44,10 +16,10 @@
 
     <div class="buttons">
 
-      <button class="operation" type="button" onclick="operationOrEqual('+')">+</button>
-      <button class="operation" type="button" onclick="operationOrEqual('-')">-</button>
-      <button class="operation" type="button" onclick="operationOrEqual('*')">*</button>
-      <button class="operation" type="button" onclick="operationOrEqual('/')">/</button>
+      <button class="operation" type="button" onclick="operation('+')">+</button>
+      <button class="operation" type="button" onclick="operation('-')">-</button>
+      <button class="operation" type="button" onclick="operation('*')">*</button>
+      <button class="operation" type="button" onclick="operation('/')">/</button>
 
       <button class="number" type="button" onclick="showNumber(7)">7</button>
       <button class="number" type="button" onclick="showNumber(8)">8</button>
@@ -64,7 +36,7 @@
       <button class="number" type="button" onclick="showNumber(0)">0</button>
       <button class="number" type="button" onclick="showNumber('.')">.</button>
       <button class="clean" type="button" onclick="cleanDisplay()">C</button>
-      <button class="equal" type="button" onclick="operationOrEqual('=')">=</button>
+      <button class="equal" type="button" onclick="equal()">=</button>
 
     </div>
   </div>
