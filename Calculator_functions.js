@@ -21,11 +21,12 @@ function calculation(num1, symb, num2){
 // Display Functions
 
 let exp_complete = [,,,false]; // [0]-Num1 , [1]-Op, [2]-Num2, [3]-logic for equal
+let textExp = "";
 
 function showNumber(n){
   let valorDisplay = document.getElementById("display").value;
 
-  if(valorDisplay.length < 8){
+  if(valorDisplay.length < 8 || valorDisplay[valorDisplay.length - 1] == " "){
     if(valorDisplay == "0" || valorDisplay == "" || valorDisplay == "ERR"){
       if(n == '.'){
         document.getElementById("display").value = "0."
@@ -47,7 +48,7 @@ function equal(){
   let result;
 
   if(exp_complete[3] == false){
-    exp_complete[2] = document.getElementById("display").value;
+    exp_complete[2] = document.getElementById("display").value.replace(textExp,'');
     exp_complete[3] = true;
   }
 
@@ -65,5 +66,6 @@ function operation(symb){
   exp_complete[0] = document.getElementById("display").value;
   exp_complete[1] = symb;
   exp_complete[3] = false;
-  document.getElementById("display").value = "";
+  textExp = exp_complete[0] + " " + exp_complete[1] + " ";
+  document.getElementById("display").value = textExp;
 }
