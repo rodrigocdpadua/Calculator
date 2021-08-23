@@ -1,4 +1,5 @@
 // Simple Operations
+
 function calculation(num1, symb, num2){
   let result;
   switch (symb){
@@ -26,7 +27,7 @@ let textExp = "";
 function showNumber(n){
   let valorDisplay = document.getElementById("display").value;
 
-  if(valorDisplay.length < 8 || valorDisplay[valorDisplay.length - 1] == " "){
+  if(valorDisplay.length < 8){
     if(valorDisplay == "0" || valorDisplay == "" || valorDisplay == "ERR"){
       if(n == '.'){
         document.getElementById("display").value = "0."
@@ -42,6 +43,16 @@ function showNumber(n){
 
 function cleanDisplay(){
   document.getElementById("display").value = 0;
+}
+
+function backspace(){
+  let valorDisplay = document.getElementById("display").value;
+
+  if(valorDisplay == "0" || valorDisplay == "" || valorDisplay == "ERR" || valorDisplay.length == 1){
+    document.getElementById("display").value = 0;
+  } else {
+    document.getElementById("display").value = valorDisplay.replace(/.$/, '');
+  }
 }
 
 function equal(){
@@ -66,6 +77,6 @@ function operation(symb){
   exp_complete[0] = document.getElementById("display").value;
   exp_complete[1] = symb;
   exp_complete[3] = false;
-  textExp = exp_complete[0] + " " + exp_complete[1] + " ";
+  textExp = exp_complete[0] + exp_complete[1];
   document.getElementById("display").value = textExp;
 }

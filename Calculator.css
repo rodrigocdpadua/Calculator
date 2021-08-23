@@ -38,10 +38,14 @@ button {
 
 .equal{
   background-color: whitesmoke;
-  height: 100%;
-  grid-area: 2 / 4 / 6 / 5;
 }
 
 .clean{
   background-color: crimson;
+  grid-column: 4;
+}
+.cleanAll{
+  background-color: crimson;
+  grid-row: 1;
+  grid-column: 1;
 }

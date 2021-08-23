@@ -7,7 +7,7 @@
 
   <link rel="stylesheet" type="text/css" href="Calculator.css"/>
   <script type="text/javascript" src="Calculator_functions.js"></script>
-  
+
   <title>Calculator</title>
 </head>
 <body>
@@ -15,28 +15,28 @@
     <input type="text" id="display" disabled>
 
     <div class="buttons">
-
-      <button class="operation" type="button" onclick="operation('+')">+</button>
-      <button class="operation" type="button" onclick="operation('-')">-</button>
-      <button class="operation" type="button" onclick="operation('*')">*</button>
-      <button class="operation" type="button" onclick="operation('/')">/</button>
+      <button class="cleanAll" type="button" onclick="cleanDisplay()">AC</button>
+      <button class="clean" type="button" onclick="backspace()">C</button>
 
       <button class="number" type="button" onclick="showNumber(7)">7</button>
       <button class="number" type="button" onclick="showNumber(8)">8</button>
       <button class="number" type="button" onclick="showNumber(9)">9</button>
+      <button class="operation" type="button" onclick="operation('+')">+</button>
 
       <button class="number" type="button" onclick="showNumber(4)">4</button>
       <button class="number" type="button" onclick="showNumber(5)">5</button>
       <button class="number" type="button" onclick="showNumber(6)">6</button>
+      <button class="operation" type="button" onclick="operation('-')">-</button>
 
       <button class="number" type="button" onclick="showNumber(1)">1</button>
       <button class="number" type="button" onclick="showNumber(2)">2</button>
       <button class="number" type="button" onclick="showNumber(3)">3</button>
+      <button class="operation" type="button" onclick="operation('*')">*</button>
 
-      <button class="number" type="button" onclick="showNumber(0)">0</button>
       <button class="number" type="button" onclick="showNumber('.')">.</button>
-      <button class="clean" type="button" onclick="cleanDisplay()">C</button>
+      <button class="number" type="button" onclick="showNumber(0)">0</button>
       <button class="equal" type="button" onclick="equal()">=</button>
+      <button class="operation" type="button" onclick="operation('/')">/</button>
 
     </div>
   </div>
