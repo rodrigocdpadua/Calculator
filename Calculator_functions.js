@@ -19,6 +19,10 @@ function calculation(num1, symb, num2){
   return result;
 }
 
+function teste (num1, num2){
+  console.log(num1+num2)
+}
+
 // Display Functions
 
 let exp_complete = [,,,false]; // [0]-Num1 , [1]-Op, [2]-Num2, [3]-logic for equal
